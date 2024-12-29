@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -21,17 +22,8 @@ const services = [
     title: "Full-Stack Development",
     description: "Combining both frontend and backend development skills.",
   },
-  // {
-  //   id: 5,
-  //   title: "Content Writing",
-  //   description: "Writing content for your business and companies.",
-  // },
-  // {
-  //   id: 6,
-  //   title: "Digital Marketing",
-  //   description: "Promote your business with our digital marketing team.",
-  // },
 ];
+
 const Service = () => {
   return (
     <div className="bg-black text-white py-20" id="service">
@@ -39,24 +31,50 @@ const Service = () => {
         <h2 className="text-4xl font-bold text-center mb-12">My Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div
+            <motion.div
               key={service.id}
-              className="bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform 
-              transition-transform duration-300 hover:scale-105"
+              className="bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: service.id * 0.2 }}
             >
-              <div
+              <motion.div
                 className="text-right text-2xl font-bold text-transparent bg-clip-text 
               bg-gradient-to-r from-green-600 to-blue-400"
+                initial={{ x: -100 }}
+                whileInView={{ x: 0 }}
+                transition={{ duration: 0.6, delay: service.id * 0.1 }}
               >
                 {service.id}
-              </div>
-              <h3 className="mt-2 text-2xl font-bold text-transparent bg-clip-text 
-              bg-gradient-to-r from-green-400 to-blue-500">
+              </motion.div>
+              <motion.h3
+                className="mt-2 text-2xl font-bold text-transparent bg-clip-text 
+              bg-gradient-to-r from-green-400 to-blue-500"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: service.id * 0.2 }}
+              >
                 {service.title}
-              </h3>
-              <p className="mt-2 text-gray-300">{service.description}</p>
-              <a href="#" className="mt-4 inline-block text-green-400 hover:text-blue-500">Read More</a>
-            </div>
+              </motion.h3>
+              <motion.p
+                className="mt-2 text-gray-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: service.id * 0.3 }}
+              >
+                {service.description}
+              </motion.p>
+              <motion.a
+                href="#"
+                className="mt-4 inline-block text-green-400 hover:text-blue-500"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: service.id * 0.4 }}
+              >
+                Read More
+              </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>
