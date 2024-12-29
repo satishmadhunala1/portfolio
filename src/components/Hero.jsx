@@ -23,7 +23,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white text-center py-16">
+    <div className="bg-black text-white text-center py-16 min-h-screen flex flex-col justify-center items-center">
       {/* Image Animation */}
       <img
         src={HeroImage}
@@ -35,7 +35,7 @@ const Hero = () => {
 
       {/* Title Animation */}
       <h1
-        className={`text-4xl font-bold transition-transform duration-700 ${
+        className={`text-3xl sm:text-4xl md:text-5xl font-bold transition-transform duration-700 ${
           animateTitle ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
         }`}
       >
@@ -51,7 +51,7 @@ const Hero = () => {
 
       {/* Subtitle */}
       <p
-        className={`mt-4 text-lg text-gray-300 transition-transform duration-700 ${
+        className={`mt-4 text-lg sm:text-xl text-gray-300 transition-transform duration-700 ${
           animateTitle ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
         }`}
       >
@@ -64,14 +64,10 @@ const Hero = () => {
           animateButtons ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
-        <button
-          className="bg-gradient-to-r from-green-400 to-blue-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
-        >
+        <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full">
           Contact With Me
         </button>
-        <button
-          className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
-        >
+        <button className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full">
           Resume
         </button>
       </div>
