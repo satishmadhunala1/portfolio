@@ -10,6 +10,7 @@ const projects = [
     technologies: "MERN Stack",
     image: employeeMSImage,
     github: "https://github.com/satishmadhunala1/e-zone-react-app.git",
+    vercel:"https://e-commerce-five-phi-52.vercel.app/",
   },
   // Uncomment and modify other projects as needed
   // {
@@ -118,6 +119,14 @@ const Projects = () => {
                 rel="noopener noreferrer"
               >
                 GitHub
+              </a>
+              <a
+                href={project.vercel}
+                className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-5 py-2 rounded-full"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                link
               </a>
             </div>
           ))}
