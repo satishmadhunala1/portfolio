@@ -49,7 +49,6 @@ const Hero = () => {
         </span>
       </h1>
 
-      {/* Subtitle */}
       <p
         className={`mt-4 text-lg sm:text-xl text-gray-300 transition-transform duration-700 ${
           animateTitle ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
@@ -58,18 +57,23 @@ const Hero = () => {
         I specialize in building modern and responsive web applications.
       </p>
 
-      {/* Buttons Animation */}
       <div
         className={`mt-8 space-x-4 transition-transform duration-700 ${
           animateButtons ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
-        <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full">
+        <a
+          href="#contact"
+          className="bg-gradient-to-r from-green-400 to-blue-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
+        >
           Contact With Me
-        </button>
-        <button className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full">
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1ymX-_KdX2xtU138qLaN52Hms88buHnNY/view?usp=sharing"
+          className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
+        >
           Resume
-        </button>
+        </a>
       </div>
     </div>
   );

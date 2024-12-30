@@ -29,7 +29,7 @@ const Contact = () => {
             >
               Let's Talk
             </h3>
-            <p>I'm open to discussing web development projects or partnership opportunities.</p>
+            <p>I'm open to discuss web development projects or partnership opportunities.</p>
             <div className="mb-4 mt-8">
               <FaEnvelope className="inline-block text-green-400 mr-2"></FaEnvelope>
               <a href="mailto:youremail@example.com" className="hover:underline">

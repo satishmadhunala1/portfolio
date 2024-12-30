@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import employeeMSImage from "../assets/employee-ms.png";
-import bookMSImage from "../assets/admin-dashboard.png";
+import employeeMSImage from "../assets/e-commerce.png";
+
+// import bookMSImage from "../assets/admin-dashboard.png";
 
 const projects = [
   {
