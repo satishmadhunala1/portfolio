@@ -28,7 +28,7 @@ const Hero = () => {
       <img
         src={HeroImage}
         alt="Profile"
-        className={`mx-auto mb-8 w-48 h-48 rounded-full object-cover transform transition-transform duration-700 ${
+        className={`mx-auto mb-8 w-48 h-52 rounded-full object-cover transform transition-transform duration-700 ${
           animateImage ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
         }`}
       />
