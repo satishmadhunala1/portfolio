@@ -83,11 +83,11 @@ const About = () => {
           {/* Image Animation */}
           <img
             ref={imageRef}
-            src={AboutImage}
-            alt="About Me"
-            className={`w-72 h-80 rounded object-cover mb-8 md:mb-0 transition-transform duration-700 ${
-              animateImage ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-            }`}
+            // src={AboutImage}
+            // alt="About Me"
+            // className={`w-72 h-80 rounded object-cover mb-8 md:mb-0 transition-transform duration-700 ${
+            //   animateImage ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+            // }`}
           />
 
           <div className="flex-1">
