@@ -1,28 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import employeeMSImage from "../assets/e-commerce.png";
-
-// import bookMSImage from "../assets/admin-dashboard.png";
-
+import EcommerceImage from "../assets/e-commerce.jpg";
+import FoodImage from "../assets/header_img.png"; // Assuming this is the food app image
 const projects = [
   {
     id: 1,
     name: "E-Commerce App",
     description: "A full-featured e-commerce platform with modern UI and seamless shopping experience.",
-    technologies: ["React", ],
-    image: employeeMSImage,
+    technologies: ["React","Front-End" ],
+    image: EcommerceImage,
     github: "https://github.com/satishmadhunala1/e-zone-react-app.git",
     vercel: "https://e-commerce-five-phi-52.vercel.app/",
   },
-  // Uncomment and modify other projects as needed
-  // {
-  //   id: 2,
-  //   name: "Blog App",
-  //   technologies: "MERN Stack",
-  //   image: bookMSImage,
-  //   github: "https://github.com/YouafKhan1",
-  // },
+  {
+    id: 2,
+    name: "Food App",
+    description: "A full-featured  food blog application with user authentication and rich text editing.",
+    technologies: ["MERN Stack","Full Stack"],
+    image: FoodImage,
+    github: "https://github.com/satishmadhunala1/Food-app.git",
+  },
+
   // {
   //   id: 3,
   //   name: "Book MS",
@@ -133,9 +132,13 @@ const Projects = () => {
                   {project.name}
                 </h3>
 
+                  <h4 className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                  {project.technologies.join(", ")}
+                </h4>
+
                 <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -144,7 +147,7 @@ const Projects = () => {
                       {tech}
                     </span>
                   ))}
-                </div>
+                </div> */}
 
                 <div className="flex gap-4">
                   <motion.a

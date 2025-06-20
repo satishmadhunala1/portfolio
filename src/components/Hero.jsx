@@ -145,7 +145,7 @@ const Hero = () => {
             Contact With Me
           </motion.a>
           <motion.a
-            href="https://drive.google.com/file/d/1BqqpYQpyHW_jyuBD8lZNerjWAMYTqe6I/view?usp=drive_link"
+            href="https://drive.google.com/file/d/10FjNGd9OkFNb5ouT2phUi-EuqrI0IenY/view?usp=sharing"
             className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-pink-500/20"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
