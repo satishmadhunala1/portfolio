@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import EcommerceImage from "../assets/e-commerce.jpg";
-import FoodImage from "../assets/header_img.png"; // Assuming this is the food app image
+import FoodImage from "../assets/header_img.png";
+import CricketImg from "../assets/cricket_turf.jpg" // Assuming this is the food app image
 const projects = [
   {
     id: 1,
@@ -11,7 +12,7 @@ const projects = [
     technologies: ["React","Front-End" ],
     image: EcommerceImage,
     github: "https://github.com/satishmadhunala1/e-zone-react-app.git",
-    vercel: "https://e-commerce-five-phi-52.vercel.app/",
+    live: "https://e-commerce-five-phi-52.vercel.app/",
   },
   {
     id: 2,
@@ -22,13 +23,15 @@ const projects = [
     github: "https://github.com/satishmadhunala1/Food-app.git",
   },
 
-  // {
-  //   id: 3,
-  //   name: "Book MS",
-  //   technologies: "MERN Stack",
-  //   image: employeeMSImage,
-  //   github: "https://github.com/YouafKhan1",
-  // },
+  {
+    id: 3,
+    name: "Turf_Cricket App",
+    description: "A full-featured cricket management application with user authentication and real-time updates.",
+    technologies: ["MERN Stack", "Full Stack"],
+    image: CricketImg,
+    github: "https://github.com/satishmadhunala1/Turf_cricket.git",
+    live: "https://turf-cricket-frontend.onrender.com",
+  },
 ];
 
 const Projects = () => {
@@ -161,7 +164,7 @@ const Projects = () => {
                     GitHub
                   </motion.a>
                   <motion.a
-                    href={project.vercel}
+                    href={project.live}
                     className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-center font-medium shadow-lg hover:shadow-purple-500/20"
                     target="_blank"
                     rel="noopener noreferrer"
