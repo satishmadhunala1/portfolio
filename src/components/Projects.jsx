@@ -21,6 +21,7 @@ const projects = [
     technologies: ["MERN Stack","Full Stack"],
     image: FoodImage,
     github: "https://github.com/satishmadhunala1/Food-app.git",
+    live: "https://food-app-frontend-jzem.onrender.com",
   },
 
   {
