@@ -31,7 +31,7 @@ const Service = () => {
   useEffect(() => {
     const observerOptions = {
       rootMargin: "0px",
-      threshold: 0.2, // Trigger when 20% of the element is in view
+      threshold: 0.2, 
     };
 
     // Observer for heading
