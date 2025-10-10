@@ -151,7 +151,7 @@ const Hero = () => {
                 <img 
                   src={AboutImage} 
                   alt="Satish Madhunala" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                 />
               ) : (
                 <div className="text-6xl">👨‍💻</div>
