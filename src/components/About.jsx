@@ -88,6 +88,10 @@ const About = () => {
     ],
   };
 
+
+
+
+  
   return (
     <motion.div
       className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white py-20 min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
