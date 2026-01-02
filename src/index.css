@@ -2,22 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #1e293b;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+  }
+
+  body {
+    @apply bg-white dark:bg-gray-900 text-slate-800 dark:text-gray-100;
+  }
+}
+
 @layer utilities {
-    .animate-fade-in {
-      animation: fadeIn 1s ease-in-out;
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-fade-in-slow {
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
     }
-  
-    .animate-fade-in-slow {
-      animation: fadeIn 2s ease-in-out;
-    }
-  
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+    100% {
+      opacity: 1;
     }
   }
-  
+}

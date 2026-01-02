@@ -8,9 +8,11 @@ import Service from './components/Service'
 import './App.css'
 
 
+
 function App() {
 
   return (
+   
     <div>
         <Navbar />
         <Hero />
@@ -20,6 +22,8 @@ function App() {
         <Contact />
         <Footer />
     </div>
+
+  
   )
 }
 

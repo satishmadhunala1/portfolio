@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
+  darkMode: 'class', // Keep this for dark mode toggle
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -40,6 +40,14 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+        // Added light theme colors
+        light: {
+          background: '#f8fafc',
+          surface: '#ffffff',
+          text: '#1e293b',
+          textSecondary: '#64748b',
+          border: '#e2e8f0',
+        },
       },
       spacing: {
         '128': '32rem',
@@ -51,4 +59,3 @@ export default {
     require('tailwindcss-animate')
   ],
 }
-

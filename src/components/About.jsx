@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb } from "react-icons/si";
-import { Globe } from "./Globe";
+import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaDownload, FaCode, FaServer, FaDatabase, FaPaintBrush, FaMobileAlt, FaRocket, FaUsers } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiJavascript, SiTypescript, SiExpress, SiFirebase, SiRedux, SiNextdotjs } from "react-icons/si";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -15,7 +14,7 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -26,222 +25,239 @@ const About = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
       },
     },
   };
 
-  const skills = [
+  const developmentProcess = [
     {
-      label: "HTML & CSS",
-      width: 85,
-      icon: (
-        <>
-          <FaHtml5 className="text-orange-500" />
-          <FaCss3Alt className="text-blue-500" />
-        </>
-      ),
+      step: "01",
+      title: "Planning & Analysis",
+      description: "Understanding requirements and planning the architecture",
+      icon: <FaPaintBrush className="text-xl" />,
+      color: "text-blue-500",
+      borderColor: "border-blue-200 dark:border-blue-900"
     },
     {
-      label: "React JS",
-      width: 90,
-      icon: <FaReact className="text-cyan-400" />,
+      step: "02",
+      title: "Design & Prototyping",
+      description: "Creating wireframes and interactive prototypes",
+      icon: <FaMobileAlt className="text-xl" />,
+      color: "text-purple-500",
+      borderColor: "border-purple-200 dark:border-purple-900"
     },
     {
-      label: "Node JS",
-      width: 80,
-      icon: <FaNodeJs className="text-green-500" />,
+      step: "03",
+      title: "Development",
+      description: "Building the application with clean, efficient code",
+      icon: <FaCode className="text-xl" />,
+      color: "text-green-500",
+      borderColor: "border-green-200 dark:border-green-900"
     },
     {
-      label: "MongoDB",
-      width: 75,
-      icon: <SiMongodb className="text-green-600" />,
-    },
-    {
-      label: "Tailwind CSS",
-      width: 85,
-      icon: <SiTailwindcss className="text-cyan-300" />,
-    },
+      step: "04",
+      title: "Testing & Deployment",
+      description: "Thorough testing and deploying to production",
+      icon: <FaRocket className="text-xl" />,
+      color: "text-orange-500",
+      borderColor: "border-orange-200 dark:border-orange-900"
+    }
   ];
 
-  // Custom globe configuration with white color scheme
-  const globeConfig = {
-    width: 800,
-    height: 800,
-    devicePixelRatio: 2,
-    phi: 0,
-    theta: 0.3,
-    dark: 0, // Changed from 1 to 0 for light mode
-    diffuse: 1.2,
-    mapSamples: 16000,
-    mapBrightness: 1.2,
-    baseColor: [1, 1, 1], // White base color
-    markerColor: [0.1, 0.8, 1], // Cyan-blue markers
-    glowColor: [0.8, 0.8, 0.8], // Light glow
-    markers: [
-      { location: [37.7749, -122.4194], size: 0.05 },
-      { location: [40.7128, -74.0060], size: 0.05 },
-      { location: [51.5074, -0.1278], size: 0.05 },
-      { location: [35.6762, 139.6503], size: 0.05 },
-      { location: [28.6139, 77.2090], size: 0.05 },
-    ],
-  };
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      skills: [
+        { name: "React", icon: <FaReact className="text-blue-500" />, level: 95 },
+        { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" />, level: 85 },
+        { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, level: 80 },
+        { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" />, level: 90 }
+      ],
+      color: "border-blue-200 dark:border-blue-900",
+      bgColor: "bg-blue-50 dark:bg-blue-900/20"
+    },
+    {
+      title: "Backend Development",
+      skills: [
+        { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, level: 90 },
+        { name: "Express", icon: <SiExpress className="text-gray-600" />, level: 88 },
+        { name: "MongoDB", icon: <SiMongodb className="text-green-700" />, level: 85 },
+        { name: "Firebase", icon: <SiFirebase className="text-orange-500" />, level: 75 }
+      ],
+      color: "border-green-200 dark:border-green-900",
+      bgColor: "bg-green-50 dark:bg-green-900/20"
+    },
+    {
+      title: "Core Technologies",
+      skills: [
+        { name: "JavaScript", icon: <SiJavascript className="text-yellow-500" />, level: 95 },
+        { name: "HTML5", icon: <FaHtml5 className="text-orange-500" />, level: 98 },
+        { name: "CSS3", icon: <FaCss3Alt className="text-blue-400" />, level: 90 },
+        { name: "Redux", icon: <SiRedux className="text-purple-500" />, level: 85 }
+      ],
+      color: "border-purple-200 dark:border-purple-900",
+      bgColor: "bg-purple-50 dark:bg-purple-900/20"
+    }
+  ];
 
+  const coreValues = [
+    { icon: <FaCode className="text-blue-500" />, title: "Clean Code", description: "Writing maintainable and scalable code" },
+    { icon: <FaUsers className="text-green-500" />, title: "User Focus", description: "Prioritizing user experience in every project" },
+    { icon: <FaServer className="text-purple-500" />, title: "Performance", description: "Optimizing for speed and efficiency" },
+    { icon: <FaRocket className="text-orange-500" />, title: "Innovation", description: "Embracing new technologies and approaches" }
+  ];
 
-
-
-  
   return (
-    <motion.div
-      className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white py-20 min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
-      id="about"
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={containerVariants}
-      ref={ref}
-    >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -50, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{ top: "10%", left: "5%" }}
-        />
-        <motion.div
-          className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{ bottom: "10%", right: "5%" }}
-        />
-
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik02MCAwSDBWNk0wIDBINjBWNjAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-20"></div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <div className="inline-block relative">
-            <div className="absolute -inset-3 bg-gradient-to-r from-blue-600 to-purple-600 blur-2xl opacity-30 rounded-full"></div>
-            <h2 className="relative text-4xl sm:text-5xl md:text-6xl font-bold">
-              About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                Me
-              </span>
-            </h2>
-          </div>
-          <motion.div
-            className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"
-            initial={{ width: 0 }}
-            animate={inView ? { width: 96 } : {}}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          ></motion.div>
+    <div className="bg-gray-50 dark:bg-gray-900 py-20" id="about" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            About <span className="text-blue-600 dark:text-blue-400">Me</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+            Full-stack developer passionate about creating exceptional digital experiences
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Side - Globe */}
-          <motion.div
-            className="relative group flex justify-center lg:justify-start order-2 lg:order-1"
-            variants={itemVariants}
-            whileHover={{ y: -10 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div
-              className="absolute -inset-3 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-30 group-hover:opacity-50 transition duration-300"
-            />
-            <div className="relative w-full h-full sm:h-80 md:h-96 max-w-md mx-auto ">
-              <Globe 
-                config={globeConfig}
-                className="w-full h-full opacity-90 transition-opacity duration-300 group-hover:opacity-100 mt-1"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 pointer-events-none rounded-2xl"></div>
-            </div>
-          </motion.div>
-
-          {/* Right Side - Content */}
-          <motion.div
-            className="space-y-8 bg-gradient-to-b from-gray-800/30 to-gray-900/30 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-gray-700 shadow-xl order-1 lg:order-2"
-            variants={itemVariants}
-          >
-            <motion.p
-              className="text-lg sm:text-xl text-gray-300 leading-relaxed"
-              variants={itemVariants}
-            >
-              I am a passionate{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-medium">
-                full-stack developer
-              </span>{" "}
-              with a focus on building modern and responsive web applications.
-              With a strong foundation in both frontend and backend
-              technologies, I strive to create seamless and efficient user
-              experiences that make a difference.
-            </motion.p>
-
-            <motion.div className="space-y-6" variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                My Skills
+        {/* Introduction Section */}
+        <motion.div
+          className="bg-white dark:bg-gray-800 rounded-2xl p-8 mb-16 border border-gray-200 dark:border-gray-700"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="lg:w-1/2">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Crafting Digital Experiences
               </h3>
-              {skills.map((skill, index) => (
+              <div className="space-y-4 text-gray-600 dark:text-gray-300">
+                <p>
+                  I'm a passionate full-stack developer with expertise in modern web technologies. 
+                  With 1 year of experience, I specialize in building responsive, scalable applications 
+                  that deliver exceptional user experiences.
+                </p>
+                <p>
+                  My approach combines technical expertise with creative problem-solving, ensuring 
+                  that every project not only meets requirements but exceeds expectations.
+                </p>
+              </div>
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+              {coreValues.map((value, index) => (
                 <motion.div
-                  key={skill.label}
-                  className="space-y-2 group"
-                  variants={itemVariants}
-                  custom={index}
-                  whileHover={{ x: 5 }}
+                  key={value.title}
+                  className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  whileHover={{ y: -5 }}
                 >
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg flex gap-1">{skill.icon}</span>
-                      <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
-                        {skill.label}
-                      </span>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-white dark:bg-gray-800 rounded-lg">
+                      {value.icon}
                     </div>
-                    <span className="text-sm font-medium text-gray-400">
-                      {skill.width}%
-                    </span>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">{value.title}</h4>
                   </div>
-                  <div className="h-2.5 bg-gray-800 rounded-full overflow-hidden shadow-inner">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full relative"
-                      initial={{ width: 0 }}
-                      animate={inView ? { width: `${skill.width}%` } : {}}
-                      transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10"></div>
-                    </motion.div>
-                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{value.description}</p>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
+          </div>
+        </motion.div>
 
-            <motion.div className="pt-4" variants={itemVariants}>
-              <motion.button
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-500 hover:to-purple-500 transform hover:-translate-y-1"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+        {/* Development Process */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
+            My Development Process
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {developmentProcess.map((process, index) => (
+              <motion.div
+                key={process.step}
+                className={`p-6 rounded-xl border ${process.borderColor} bg-white dark:bg-gray-800`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
               >
-                Download Resume
-              </motion.button>
+                <div className="flex items-start gap-4">
+                  <div className={`text-2xl font-bold ${process.color}`}>{process.step}</div>
+                  <div>
+                    <div className={`p-2 rounded-lg ${process.color} bg-white dark:bg-gray-700 w-fit mb-3`}>
+                      {process.icon}
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                      {process.title}
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">
+                      {process.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="space-y-8">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+            >
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                {category.title}
+              </h3>
+              <div className={`rounded-xl border ${category.color} ${category.bgColor} p-6`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
+                      className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: 0.5 + skillIndex * 0.05 }}
+                      whileHover={{ y: -3 }}
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="text-2xl">{skill.icon}</div>
+                        <span className="font-semibold text-gray-900 dark:text-white">{skill.name}</span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600 dark:text-gray-400">Proficiency</span>
+                          <span className="font-semibold text-blue-600 dark:text-blue-400">{skill.level}%</span>
+                        </div>
+                        <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                            initial={{ width: 0 }}
+                            animate={inView ? { width: `${skill.level}%` } : {}}
+                            transition={{ duration: 1, delay: 0.6 + skillIndex * 0.1 }}
+                          />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
-          </motion.div>
+          ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
