@@ -110,7 +110,7 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 py-20" id="about" ref={ref}>
+    <div className="bg-white dark:bg-gray-900 py-20" id="about" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div 
