@@ -71,8 +71,6 @@ const About = () => {
       title: "Frontend Development",
       skills: [
         { name: "React", icon: <FaReact className="text-blue-500" />, level: 95 },
-        { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" />, level: 85 },
-        { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, level: 80 },
         { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" />, level: 90 }
       ],
       color: "border-blue-200 dark:border-blue-900",
@@ -84,7 +82,6 @@ const About = () => {
         { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, level: 90 },
         { name: "Express", icon: <SiExpress className="text-gray-600" />, level: 88 },
         { name: "MongoDB", icon: <SiMongodb className="text-green-700" />, level: 85 },
-        { name: "Firebase", icon: <SiFirebase className="text-orange-500" />, level: 75 }
       ],
       color: "border-green-200 dark:border-green-900",
       bgColor: "bg-green-50 dark:bg-green-900/20"
